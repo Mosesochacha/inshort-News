@@ -5,5 +5,34 @@
     width: 400px;
     color: #000;
     margin-left: 50vh;
+    overflow: hidden;
 
 }
+#card{
+    overflow: hidden;
+    background-color: aquamarine;
+    margin-top: 50;
+    height: 400px;
+    width: 400px;
+    color: #000;
+    margin-left: 50vh;
+
+}
+#btn-r{
+    background-color: antiquewhite;
+    color: blue;
+    height: 45px;
+    width: 100vh;
+  margin: 1vh;
+  box-shadow: inset;
+}
+
+#btn-l{
+    background-color: antiquewhite;
+    color: blue;
+    height: 45px;
+    width: 100vh;
+  margin: 1vh;
+  box-shadow: inset;
+}
+
