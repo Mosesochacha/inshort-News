@@ -1,3 +1,4 @@
+const News_API ="https://inshorts.deta.dev/news?category=all"
 document.addEventListener('DOMContentLoaded',(e)=>{
     e.preventDefault()
     const navbar =document.getElementById('navbar')
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded',(e)=>{
     const forget=document.getElementById('forget')
     const bodys = document.getElementById('body') 
     const times = document.getElementById('time')
+    const Top_News = document.getElementById('Top_News')
 
 
      // CLICK EVENTS FOR LINKS
@@ -67,7 +69,7 @@ document.addEventListener('DOMContentLoaded',(e)=>{
     
 
            })
-           function showtime(){
+  function showtime(){
             let dateTime = new Date ()
             let time =dateTime.toLocaleString()
             const times = document.getElementById('times')
@@ -77,5 +79,21 @@ document.addEventListener('DOMContentLoaded',(e)=>{
           }
           let display = setInterval(showtime,1)
 
-  showtime
+ const updateAllCatergory = ()=>{
+    fetch(News_API)
+    .then((response)=>response.json())
+    .then((News)=>{
+        News.data.map(data=>{
+            const title = data.title
+            const Top_News = document.getElementById('Top_News')
+            const News_list = document.createElement('li')
+            News_list.innerHTML=`${title}`
+            Top_News.appendChild(News_list)
+            
+        })
+    })
+ }
+
+ updateAllCatergory();
+  showtime();
 })
