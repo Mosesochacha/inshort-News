@@ -1,3 +1,7 @@
+body{
+  background-image: url(https://www.themealdb.com/api/json/v1/1/random.php);
+
+}
 .card{
     background-color: aquamarine;
     margin-top: 50;
@@ -5,19 +9,21 @@
     width: 400px;
     color: #000;
     margin-left: 50vh;
-    overflow: hidden;
 
 }
 #card{
+  box-shadow: 45vh;
     overflow: hidden;
     background-color: aquamarine;
-    margin-top: 50;
+    margin-top: 50vh;
     height: 400px;
     width: 400px;
     color: #000;
     margin-left: 50vh;
 
+
 }
+
 #btn-r{
     background-color: antiquewhite;
     color: blue;
@@ -27,12 +33,29 @@
   box-shadow: inset;
 }
 
-#btn-l{
+#login{
     background-color: antiquewhite;
     color: blue;
     height: 45px;
     width: 100vh;
   margin: 1vh;
   box-shadow: inset;
+  display: flex;
+  text-align: center;
+   
+}
+input{
+  flex-direction: column;
+  text-align: center;
+}
+
+#signup{
+  margin-inline-end: auto;
+margin-top: 26vh;
+  text-align: center;
+ 
+}
+#email{
+  margin-left: 5vh;
 }
 
