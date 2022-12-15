@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded',(e)=>{
     const signin=document.getElementById('signin')
     const loghere=document.getElementById('loghere')
     const forget=document.getElementById('forget')
-    const bodys = document.getElementById('body')
+    const bodys = document.getElementById('body') 
+    const times = document.getElementById('time')
 
 
      // CLICK EVENTS FOR LINKS
@@ -66,7 +67,15 @@ document.addEventListener('DOMContentLoaded',(e)=>{
     
 
            })
-         
+           function showtime(){
+            let dateTime = new Date ()
+            let time =dateTime.toLocaleString()
+            const times = document.getElementById('times')
+            times.innerHTML=`
+             ${time}
+            `
+          }
+          let display = setInterval(showtime,1)
 
-  
+  showtime
 })
