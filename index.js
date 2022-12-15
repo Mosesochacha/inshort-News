@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener('DOMContentLoaded',(e)=>{
+    e.preventDefault()
     const navbar =document.getElementById('navbar')
     const signup =document.getElementById('signup')
     const  search =document.getElementById('search')
@@ -7,11 +8,12 @@ document.addEventListener('DOMContentLoaded',()=>{
     const signin=document.getElementById('signin')
     const loghere=document.getElementById('loghere')
     const forget=document.getElementById('forget')
+    const bodys = document.getElementById('body')
 
 
      // CLICK EVENTS FOR LINKS
      search.addEventListener('click', (e) => {
-          e.preventDefault()
+        //   e.preventDefault()
           signin.style.display = "none"
           signin.style.display = "none"
           search.removeAttribute('hidden')
@@ -41,7 +43,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 
          login.addEventListener('click', (e) => {
-            //  e.preventDefaul()
+             //e.preventDefaul()
             signin.style.display ="none"
             search.style.display = "none"
             signup.style.display = "none"
@@ -49,6 +51,8 @@ document.addEventListener('DOMContentLoaded',()=>{
             navbar.removeAttribute('hidden')
             search.removeAttribute('hidden')
             search.style.display = "flex"
+            bodys.removeAttribute('hidden')
+            bodys.style.display = "flex"
     
     
              })
