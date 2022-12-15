@@ -1,6 +1,6 @@
 const News_API ="https://inshorts.deta.dev/news?category=all"
 document.addEventListener('DOMContentLoaded',(e)=>{
-    e.preventDefault()
+    e.stopPropagation()
     const navbar =document.getElementById('navbar')
     const signup =document.getElementById('signup')
     const  search =document.getElementById('search')
@@ -93,7 +93,20 @@ document.addEventListener('DOMContentLoaded',(e)=>{
         })
     })
  }
+ const TopUpdate = () =>{
+  fetch(News_API)
+  .then((response)=>response.json())
+  .then((item)=>{
+    const TopUpdateNews = item.data[0]
+      const title = TopUpdateNews.title
+      const author = TopUpdateNews.author
+      const date= TopUpdateNews.date
+      const time = TopUpdateNews.time
+      const ReadMoreurl = TopUpdateNews.ReadMoreurl
 
+  })
+ }
+ TopUpdate();
  updateAllCatergory();
   showtime();
 })
