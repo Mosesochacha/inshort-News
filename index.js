@@ -99,10 +99,17 @@ document.addEventListener('DOMContentLoaded',(e)=>{
   .then((item)=>{
     const TopUpdateNews = item.data[0]
       const title = TopUpdateNews.title
-      const author = TopUpdateNews.author
+     const author = TopUpdateNews.author
+      const content = TopUpdateNews.content
       const date= TopUpdateNews.date
       const time = TopUpdateNews.time
-      const ReadMoreurl = TopUpdateNews.ReadMoreurl
+      console.log(time);
+      const ReadMoreurl = TopUpdateNews.readMoreUrl
+      console.log(ReadMoreurl);
+      const Image = TopUpdateNews.imageUrl
+      console.log(Image);
+
+
 
   })
  }
