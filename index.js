@@ -103,11 +103,20 @@ document.addEventListener('DOMContentLoaded',(e)=>{
       const content = TopUpdateNews.content
       const date= TopUpdateNews.date
       const time = TopUpdateNews.time
-      console.log(time);
+      
       const ReadMoreurl = TopUpdateNews.readMoreUrl
-      console.log(ReadMoreurl);
+      
       const Image = TopUpdateNews.imageUrl
-      console.log(Image);
+      
+
+      
+      Readmore.addEventListener("click",()=>{
+        const Readmore = document.getElementById("Readmore")
+        const readMoreElems = document.getElementById('body')
+         Readmore.innerHTML =  ReadMoreurl
+         readMoreElems.appendChild(Readmore)
+        
+      })
 
 
 
