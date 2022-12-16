@@ -10,13 +10,14 @@ document.addEventListener('DOMContentLoaded',(e)=>{
     const loghere=document.getElementById('loghere')
     const forget=document.getElementById('forget')
     const bodys = document.getElementById('body') 
+    const image = document.getElementById('poster')
     const times = document.getElementById('time')
     const Top_News = document.getElementById('Top_News')
 
 
      // CLICK EVENTS FOR LINKS
      search.addEventListener('click', (e) => {
-        //   e.preventDefault()
+           e.preventDefault()
           signin.style.display = "none"
           signin.style.display = "none"
           search.removeAttribute('hidden')
@@ -103,20 +104,24 @@ document.addEventListener('DOMContentLoaded',(e)=>{
       const content = TopUpdateNews.content
       const date= TopUpdateNews.date
       const time = TopUpdateNews.time
-      
       const ReadMoreurl = TopUpdateNews.readMoreUrl
-      
       const Image = TopUpdateNews.imageUrl
       
+    const Content = document.getElementById("Content")
+    Content.innerHTML = `
+    <p>Author: ${author}</p>
+    <p>Content: ${content}</p>
+    <p>Date: ${date}</p>
+    <p>Time : ${time}</p>
+    `
 
-      
-      Readmore.addEventListener("click",()=>{
-        const Readmore = document.getElementById("Readmore")
-        const readMoreElems = document.getElementById('body')
-         Readmore.innerHTML =  ReadMoreurl
-         readMoreElems.appendChild(Readmore)
-        
-      })
+    const image= document.getElementById("poster")
+    image.innerHTML = `
+    <h3 class="bg-info text-md-center " id="movie">Image</h3>
+    <img id = "img" src=${Image} alt="">
+    `
+
+
 
 
 

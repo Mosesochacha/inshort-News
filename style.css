@@ -1,6 +1,5 @@
 body{
-  background-image: url(pexels-cottonbro-studio-10464790.jpg);
-
+  background-image: url(pexels-tima-miroshnichenko-6463213.jpg);
 }
 .card{
     background-color: aquamarine;
@@ -10,6 +9,10 @@ body{
     color: #000;
     margin-left: 50vh;
 
+}
+#img{
+  width: 430px;
+  height: 90vh;
 }
 #card{
   box-shadow: 45vh;
