@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
             `
           }
           let display = setInterval(showtime,1)
+           
 
  const updateAllCatergory = ()=>{
     fetch("https://inshorts.deta.dev/news?category=all")
@@ -122,7 +123,6 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     <img id = "img" src=${TopUpdateNews.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
   
     `
-
   })
  }
    
@@ -152,14 +152,14 @@ async function UpdateAllNews (e){
           <img id = "img" src=${newsElems.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
         
           `
-          console.log(newsElems.title);
-          console.log(newsElems.author);
         }
        })
   })
   })
   
  }
+
+//  calling functions
  TopUpdate();
  updateAllCatergory();
   showtime();
