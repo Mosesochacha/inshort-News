@@ -1,6 +1,6 @@
 const News_API ="https://inshorts.deta.dev/news?category=all"
-document.addEventListener('DOMContentLoaded',(e)=>{
-    e.stopPropagation()
+document.addEventListener('DOMContentLoaded',(event)=>{
+    //event.preventDefault()
     const navbar =document.getElementById('navbar')
     const signup =document.getElementById('signup')
     const  search =document.getElementById('search')
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded',(e)=>{
 
      // CLICK EVENTS FOR LINKS
      search.addEventListener('click', (e) => {
-           e.preventDefault()
+          e.preventDefault()
           signin.style.display = "none"
           signin.style.display = "none"
           search.removeAttribute('hidden')
@@ -25,18 +25,19 @@ document.addEventListener('DOMContentLoaded',(e)=>{
        })
 
 
-    btn_r.addEventListener('click', (e) => {
-        //  e.preventDefaul()
+    btn_r.addEventListener('click', (event) => {
+         //event.preventDefaul()
         navbar.style.display = "none"
         signup.style.display = "none"
         signin.style.display = "flex"
         signin.removeAttribute('hidden')
+        bodys.style.display = "none"
 
 
          })
 
          loghere.addEventListener('click', (e) => {
-            //  e.preventDefaul()
+             // e.preventDefaul()
             navbar.style.display = "none"
             signup.style.display = "none"
             signin.style.display = "flex"
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded',(e)=>{
 
 
          login.addEventListener('click', (e) => {
-             //e.preventDefaul()
+            // e.preventDefaul()
             signin.style.display ="none"
             search.style.display = "none"
             signup.style.display = "none"
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded',(e)=>{
             search.style.display = "flex"
             bodys.removeAttribute('hidden')
             bodys.style.display = "flex"
+          
     
     
              })
@@ -108,17 +110,19 @@ document.addEventListener('DOMContentLoaded',(e)=>{
       const Image = TopUpdateNews.imageUrl
       
     const Content = document.getElementById("Content")
-    Content.innerHTML = `
-    <p>Author: ${author}</p>
-    <p>Content: ${content}</p>
-    <p>Date: ${date}</p>
-    <p>Time : ${time}</p>
+    Content.innerHTML = `<ol>
+    <li>AUTHOR:  ${author}</li>
+    <li>TITLE:  ${title}</li>
+    <li>CONTENT:  ${content}</li>
+    <li>DATE:  ${date}</li>
+    <li>TIME:  ${time}</li>
+    <ol>
     `
 
     const image= document.getElementById("poster")
     image.innerHTML = `
     <h3 class="bg-info text-md-center " id="movie">Image</h3>
-    <img id = "img" src=${Image} alt="">
+    <img id = "img" src=${Image} alt=""class="card-img rounded mx-auto d-block" >
     `
 
 
