@@ -105,7 +105,8 @@ document.addEventListener('DOMContentLoaded',(event)=>{
   fetch("https://inshorts.deta.dev/news?category=all")
   .then((response)=>response.json())
   .then((item)=>{
-    const TopUpdateNews = item.data[0]   
+    const TopUpdateNews = item.data[0] 
+    console.log(TopUpdateNews)  
     const Content = document.getElementById("Content")
       
     Content.innerHTML = `<ol>
@@ -115,6 +116,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     <li>CONTENT:  ${TopUpdateNews.content}</li>
     <li>DATE:  ${TopUpdateNews.date}</li>
     <li>TIME:  ${TopUpdateNews.time}</li>
+    <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ${TopUpdateNews.readMoreUrl}><u>Readmore</u></a></p>
     <ol>
     `
     const image= document.getElementById("poster")
@@ -123,7 +125,9 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     <img id = "img" src=${TopUpdateNews.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
   
     `
+    
   })
+
  }
    
 
@@ -144,6 +148,7 @@ async function UpdateAllNews (e){
            <li>CONTENT:  ${ newsElems.content}</li>
           <li>DATE:  ${ newsElems.date}</li>
            <li>TIME:  ${ newsElems.time}</li>
+           <p class="text-muted mt-auto mb-0">get more stories here! <a id= "Readmore" href= ${newsElems.readMoreUrl}><u>Readmore</u></a></p>
         <ol>
        `
           const image= document.getElementById("poster")
@@ -152,6 +157,7 @@ async function UpdateAllNews (e){
           <img id = "img" src=${newsElems.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
         
           `
+
         }
        })
   })
