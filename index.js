@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
          })
 
          loghere.addEventListener('click', (e) => {
-             // e.preventDefaul()
+            //  e.preventDefaul()
             navbar.style.display = "none"
             signup.style.display = "none"
             signin.style.display = "flex"
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
           let display = setInterval(showtime,1)
 
  const updateAllCatergory = ()=>{
-    fetch(News_API)
+    fetch("https://inshorts.deta.dev/news?category=all")
     .then((response)=>response.json())
     .then((News)=>{
         News.data.map(data=>{
@@ -94,44 +94,74 @@ document.addEventListener('DOMContentLoaded',(event)=>{
             Top_News.appendChild(News_list)
             
         })
+        
     })
  }
+
+
+
  const TopUpdate = () =>{
-  fetch(News_API)
+  fetch("https://inshorts.deta.dev/news?category=all")
   .then((response)=>response.json())
   .then((item)=>{
-    const TopUpdateNews = item.data[0]
-      const title = TopUpdateNews.title
-     const author = TopUpdateNews.author
-      const content = TopUpdateNews.content
-      const date= TopUpdateNews.date
-      const time = TopUpdateNews.time
-      const ReadMoreurl = TopUpdateNews.readMoreUrl
-      const Image = TopUpdateNews.imageUrl
-      
+    const TopUpdateNews = item.data[0]   
     const Content = document.getElementById("Content")
+      
     Content.innerHTML = `<ol>
-    <li>AUTHOR:  ${author}</li>
-    <li>TITLE:  ${title}</li>
-    <li>CONTENT:  ${content}</li>
-    <li>DATE:  ${date}</li>
-    <li>TIME:  ${time}</li>
+    <h3 class="bg-info text-md-center " id="movie">INFORMATION</h3>
+    <li>AUTHOR:  ${TopUpdateNews.author}</li>
+    <li>TITLE:  ${TopUpdateNews.title}</li>
+    <li>CONTENT:  ${TopUpdateNews.content}</li>
+    <li>DATE:  ${TopUpdateNews.date}</li>
+    <li>TIME:  ${TopUpdateNews.time}</li>
     <ol>
     `
-
     const image= document.getElementById("poster")
     image.innerHTML = `
     <h3 class="bg-info text-md-center " id="movie">Image</h3>
-    <img id = "img" src=${Image} alt=""class="card-img rounded mx-auto d-block" >
+    <img id = "img" src=${TopUpdateNews.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
+  
     `
 
-
-
-
-
   })
+ }
+   
+
+async function UpdateAllNews (e){
+  const  News_list = document.getElementById('Top_News')
+  News_list.addEventListener('click',(e)=>{
+    console.log('hi Moses');
+    const Content = document.getElementById("Content")
+    fetch("https://inshorts.deta.dev/news?category=all")
+  .then((response)=>  response.json())
+  .then((items)=>{
+    items.data.map(newsElems =>{
+        if(e.target.innerHTML === newsElems.title){
+          Content.innerHTML = `<ol>
+          <h3 class="bg-info text-md-center " id="movie">INFORMATION</h3>
+          <li>AUTHOR:  ${ newsElems.author}</li>
+           <li>TITLE:  ${ newsElems.title}</li>
+           <li>CONTENT:  ${ newsElems.content}</li>
+          <li>DATE:  ${ newsElems.date}</li>
+           <li>TIME:  ${ newsElems.time}</li>
+        <ol>
+       `
+          const image= document.getElementById("poster")
+          image.innerHTML = `
+          <h3 class="bg-info text-md-center " id="movie">Image</h3>
+          <img id = "img" src=${newsElems.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
+        
+          `
+          console.log(newsElems.title);
+          console.log(newsElems.author);
+        }
+       })
+  })
+  })
+  
  }
  TopUpdate();
  updateAllCatergory();
   showtime();
+  UpdateAllNews()
 })
