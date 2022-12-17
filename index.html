@@ -11,22 +11,44 @@
 </head>
 <body>
     <!-- Navbar and search form -->
-     <nav class="navbar bg-primary opacity-55" id="navbar" hidden>
+     <nav class="navbar bg-primary opacity-55" id="navbar" >
         <div class="container-fluid" aria-hidden="true">
             <a id="navb" href="#" class="navbar-brand">InShortNews</a>
             <ul class="navbar-nav me-auto d-flex flex-row " id="times"></ul>
+            <div class="btn-group">
+                <select  id="select" class="bg-danger form-control me-2" placeholder="CATEGORIES">
+                    <option id="value">CATEGORIES</option>
+                    <option  id="value">all</option>
+                    <option  id="value">national //Indian News only</option>
+                    <option  id="value">business</option>
+                    <option  id="value">sports</option>
+                    <option  id="value">world</option>
+                    <option  id="value">politics</option>
+                    <option  id="value">startup</option>
+                    <option  id="value">entertainment</option>
+                    <option  id="value">miscellaneous</option>
+                    <option  id="value">hatke</option>
+                    <option  id="value">science</option>
+                    <option  id="value">automobile</option>
+                    
+                </select>
+              </div>
+              
             <!-- SEARCHING FORM -->
             <form action="search" id="searching" class="d-flex">
                 <input id="searchInput" type="search" class="form-control me-2" placeholder="Enter Category name">
                 <button id="search" class="btn btn-outline-success " type="submit">SEARCH</button>
             </form>
+            
         </div> 
+      
+        
      </nav>
     
    
 
      <!-- sign-up form -->
-     <div class="card flex-column opacity-25% " id="signup" >
+     <div class="card flex-column opacity-25% " id="signup" hidden>
         <form > 
             <title>sign-up</title>
             <h5 class="header" style="text-align: center;">sign-up</h5>
@@ -87,7 +109,7 @@
 
                  <!-- body information -->
 
-                     <div class="container-fluid" id="body" hidden >
+                     <div class="container-fluid" id="body"  >
                         <div class="row mt-3" id="TopNews">
                                     <div class="col-4 bg-warning">
                                         <h3 class="bg-info text-md-center " id="story">Top news headline <title>News healine</title></h3>
@@ -95,19 +117,14 @@
  
                                         </ol>
                                     </div>
-                                    <div class="col-4 bg-danger" id="poster" >
-                                        <h3 class="bg-info text-md-center " id="movie">Image</h3>
-                                        <img src="pexels-cottonbro-studio-10464790.jpg" alt="" class="card-img rounded mx-auto d-block"  id="poster">
+                                    <div class="col-4 bg-success mb-1" id="poster" >
+                                                                        
                                     </div>
                               
                                     
                                     <div class="col-4 text-md-start bg-info text-center" id="Content">
                                         <h3 class="bg-info text-md-center " id="NEWS">The content</h3>
-                                        <p>author</p>
-                                        <p>content</p>
-                                        <p>date</p>
-                                        <p>time</p>
-                                        <p class="text-muted mt-auto mb-0">get more stories here! <a id= "Readmore" href="#!"><u>Readmore</u></a></p>
+                                     
                                     </div>
                                 </div>
                             </div>
@@ -121,12 +138,3 @@
      <!-- <script src="bootstrap.js"></script> -->
 </body>
 </html>
-
-
-
-
-
-
-
-
-

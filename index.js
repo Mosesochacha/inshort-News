@@ -178,12 +178,12 @@ async function UpdateAllNews (e){
 
 
 
-//  adding suching function
+//  adding searching function
  const  search_btn =document.getElementById('search')
  const  searchInput = document.getElementById ('searchInput')
-
+let value = document.getElementById("value")
  search_btn.addEventListener('click',()=>{
-  const value = searchInput.value
+  let value = searchInput.value
    fetch(`https://inshorts.deta.dev/news?category=${value}`)
    .then((response)=>response.json())
    .then((news)=>{
