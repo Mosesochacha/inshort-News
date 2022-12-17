@@ -1,4 +1,5 @@
 const News_API ="https://inshorts.deta.dev/news?category=all"
+//  const SEACH = `https://inshorts.deta.dev/news?category=${category}`
 document.addEventListener('DOMContentLoaded',(event)=>{
     //event.preventDefault()
     const navbar =document.getElementById('navbar')
@@ -106,7 +107,6 @@ document.addEventListener('DOMContentLoaded',(event)=>{
   .then((response)=>response.json())
   .then((item)=>{
     const TopUpdateNews = item.data[0] 
-    console.log(TopUpdateNews)  
     const Content = document.getElementById("Content")
       
     Content.innerHTML = `<ol>
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     <li>CONTENT:  ${TopUpdateNews.content}</li>
     <li>DATE:  ${TopUpdateNews.date}</li>
     <li>TIME:  ${TopUpdateNews.time}</li>
-    <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ${TopUpdateNews.readMoreUrl}><u>Readmore</u></a></p>
+    <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
     <ol>
     `
     const image= document.getElementById("poster")
@@ -125,6 +125,10 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     <img id = "img" src=${TopUpdateNews.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
   
     `
+    const read = document.getElementById('read')
+    read.addEventListener('click',()=>{
+       window.open(TopUpdateNews.readMoreUrl)
+    })
     
   })
 
@@ -134,7 +138,6 @@ document.addEventListener('DOMContentLoaded',(event)=>{
 async function UpdateAllNews (e){
   const  News_list = document.getElementById('Top_News')
   News_list.addEventListener('click',(e)=>{
-    console.log('hi Moses');
     const Content = document.getElementById("Content")
     fetch("https://inshorts.deta.dev/news?category=all")
   .then((response)=>  response.json())
@@ -148,7 +151,7 @@ async function UpdateAllNews (e){
            <li>CONTENT:  ${ newsElems.content}</li>
           <li>DATE:  ${ newsElems.date}</li>
            <li>TIME:  ${ newsElems.time}</li>
-           <p class="text-muted mt-auto mb-0">get more stories here! <a id= "Readmore" href= ${newsElems.readMoreUrl}><u>Readmore</u></a></p>
+           <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
         <ol>
        `
           const image= document.getElementById("poster")
@@ -157,6 +160,13 @@ async function UpdateAllNews (e){
           <img id = "img" src=${newsElems.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
         
           `
+          const read = document.getElementById('read')
+          
+    read.addEventListener('click',function(news){
+      window.open(newsElems.readMoreUrl)
+      
+    })
+    
 
         }
        })
@@ -164,6 +174,46 @@ async function UpdateAllNews (e){
   })
   
  }
+
+
+
+
+//  adding suching function
+ const  search_btn =document.getElementById('search')
+ const  searchInput = document.getElementById ('searchInput')
+
+ search_btn.addEventListener('click',()=>{
+  const value = searchInput.value
+   fetch(`https://inshorts.deta.dev/news?category=${value}`)
+   .then((response)=>response.json())
+   .then((news)=>{
+      news.data.map(TopUpdateNews=>{
+        const Content = document.getElementById("Content")
+      
+    Content.innerHTML = `<ol>
+    <h3 class="bg-info text-md-center " id="movie">INFORMATION</h3>
+    <li>AUTHOR:  ${TopUpdateNews.author}</li>
+    <li>TITLE:  ${TopUpdateNews.title}</li>
+    <li>CONTENT:  ${TopUpdateNews.content}</li>
+    <li>DATE:  ${TopUpdateNews.date}</li>
+    <li>TIME:  ${TopUpdateNews.time}</li>
+    <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
+    <ol>
+    `
+    const image= document.getElementById("poster")
+    image.innerHTML = `
+    <h3 class="bg-info text-md-center " id="movie">Image</h3>
+    <img id = "img" src=${TopUpdateNews.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
+  
+    `
+    const read = document.getElementById('read')
+    read.addEventListener('click',()=>{
+       window.open(TopUpdateNews.readMoreUrl)
+    })
+      })
+   })
+ })
+
 
 //  calling functions
  TopUpdate();
