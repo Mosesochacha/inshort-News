@@ -1,19 +1,17 @@
-const News_API ="https://inshorts.deta.dev/news?category=all"
-//  const SEACH = `https://inshorts.deta.dev/news?category=${category}`
+
 document.addEventListener('DOMContentLoaded',(event)=>{
     event.preventDefault()
     const navbar =document.getElementById('navbar')
     const signup =document.getElementById('signup')
     const  search =document.getElementById('search')
     const btn_r =document.getElementById('btn-r')
-    const btn_l =document.getElementById('btn-l')
     const signin=document.getElementById('signin')
     const loghere=document.getElementById('loghere')
     const forget=document.getElementById('forget')
     const bodys = document.getElementById('body') 
     const image = document.getElementById('poster')
     const times = document.getElementById('time')
-    const Top_News = document.getElementById('Top_News')
+   
 
 
      // CLICK EVENTS FOR LINKS
@@ -123,16 +121,12 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     image.innerHTML = `
     <h3 class="bg-info text-md-center " id="movie">Image</h3>
     <img id = "img" src=${TopUpdateNews.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
-  
     `
     const read = document.getElementById('read')
     read.addEventListener('click',()=>{
        window.open(TopUpdateNews.readMoreUrl)
-       
     })
-    
   })
-
  }
    
 
@@ -159,7 +153,6 @@ async function UpdateAllNews (e){
           image.innerHTML = `
           <h3 class="bg-info text-md-center " id="movie">Image</h3>
           <img id = "img" src=${newsElems.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
-        
           `
           const read = document.getElementById('read')
           
@@ -167,8 +160,6 @@ async function UpdateAllNews (e){
       window.open(newsElems.readMoreUrl)
       
     })
-    
-
         }
        })
   })
@@ -202,7 +193,6 @@ async function UpdateAllNews (e){
     <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
     <ol>
     `
-    console.log(TopUpdateNews.title);
     const Top_News = document.getElementById('Top_News')
     const News_list = document.createElement('li')
     News_list.textContent=`${TopUpdateNews.title}`
