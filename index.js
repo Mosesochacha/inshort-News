@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     const read = document.getElementById('read')
     read.addEventListener('click',()=>{
        window.open(TopUpdateNews.readMoreUrl)
+       
     })
     
   })
