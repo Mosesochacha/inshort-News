@@ -1,7 +1,7 @@
 const News_API ="https://inshorts.deta.dev/news?category=all"
 //  const SEACH = `https://inshorts.deta.dev/news?category=${category}`
 document.addEventListener('DOMContentLoaded',(event)=>{
-    //event.preventDefault()
+    event.preventDefault()
     const navbar =document.getElementById('navbar')
     const signup =document.getElementById('signup')
     const  search =document.getElementById('search')
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
 
 
     btn_r.addEventListener('click', (event) => {
-         //event.preventDefaul()
+         event.preventDefault()
         navbar.style.display = "none"
         signup.style.display = "none"
         signin.style.display = "flex"
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
          })
 
          loghere.addEventListener('click', (e) => {
-            //  e.preventDefaul()
+              e.preventDefault()
             navbar.style.display = "none"
             signup.style.display = "none"
             signin.style.display = "flex"
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
 
 
          login.addEventListener('click', (e) => {
-            // e.preventDefaul()
+             e.preventDefault()
             signin.style.display ="none"
             search.style.display = "none"
             signup.style.display = "none"
@@ -181,9 +181,10 @@ async function UpdateAllNews (e){
 //  adding searching function
  const  search_btn =document.getElementById('search')
  const  searchInput = document.getElementById ('searchInput')
-let value = document.getElementById("value")
  search_btn.addEventListener('click',()=>{
-  let value = searchInput.value
+  const Top_News = document.getElementById('Top_News')
+  Top_News.innerHTML=""
+  const value = searchInput.value
    fetch(`https://inshorts.deta.dev/news?category=${value}`)
    .then((response)=>response.json())
    .then((news)=>{
@@ -200,6 +201,13 @@ let value = document.getElementById("value")
     <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
     <ol>
     `
+    console.log(TopUpdateNews.title);
+    const Top_News = document.getElementById('Top_News')
+    const News_list = document.createElement('li')
+    News_list.textContent=`${TopUpdateNews.title}`
+    Top_News.appendChild(News_list)
+  
+    
     const image= document.getElementById("poster")
     image.innerHTML = `
     <h3 class="bg-info text-md-center " id="movie">Image</h3>

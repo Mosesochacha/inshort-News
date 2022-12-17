@@ -11,7 +11,7 @@
 </head>
 <body>
     <!-- Navbar and search form -->
-     <nav class="navbar bg-primary opacity-55" id="navbar" >
+     <nav class="navbar bg-primary opacity-55" id="navbar" hidden >
         <div class="container-fluid" aria-hidden="true">
             <a id="navb" href="#" class="navbar-brand">InShortNews</a>
             <ul class="navbar-nav me-auto d-flex flex-row " id="times"></ul>
@@ -48,7 +48,7 @@
    
 
      <!-- sign-up form -->
-     <div class="card flex-column opacity-25% " id="signup" hidden>
+     <div class="card flex-column opacity-25% " id="signup" >
         <form > 
             <title>sign-up</title>
             <h5 class="header" style="text-align: center;">sign-up</h5>
@@ -67,10 +67,10 @@
                 <label id="email" for="email" class="form-label">Email </label>
                 <input type="email"  placeholder="enter your email"required> 
             </div>
-            <!-- <div class="mb-3">
+            <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="password"  id="exampleInputPassword1" required>
-              </div> -->
+              </div>
 
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-success btn-;block btn-lg gradient-custom-4 text-body" id="btn-r">Register</button>
@@ -91,10 +91,10 @@
                         <label for="inputUserEmail" class="form-label">UserEmail </label>
                         <input type="text"  placeholder="enter your Username" required> 
                     </div>
-                    <!-- <div class="mb-3">
+                    <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
                         <input type="password"  id="exampleInputPassword1" required>
-                      </div> -->
+                      </div>
 
 
                     <div class="d-flex justify-content-center">
@@ -109,7 +109,7 @@
 
                  <!-- body information -->
 
-                     <div class="container-fluid" id="body"  >
+                     <div class="container-fluid" id="body" hidden  >
                         <div class="row mt-3" id="TopNews">
                                     <div class="col-4 bg-warning">
                                         <h3 class="bg-info text-md-center " id="story">Top news headline <title>News healine</title></h3>
