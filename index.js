@@ -1,3 +1,4 @@
+ let likes = 0
 
 document.addEventListener('DOMContentLoaded',(event)=>{
     event.preventDefault()
@@ -114,8 +115,12 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     <li>CONTENT:  ${TopUpdateNews.content}</li>
     <li>DATE:  ${TopUpdateNews.date}</li>
     <li>TIME:  ${TopUpdateNews.time}</li>
+    <h6 id="liking">like <span id ="span">0</span> </h6>
     <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
     <ul>
+    
+    
+ 
     `
     const image= document.getElementById("poster")
     image.innerHTML = `
@@ -126,8 +131,14 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     read.addEventListener('click',()=>{
        window.open(TopUpdateNews.readMoreUrl)
     })
+    const liking = document.getElementById('liking')
+    liking.addEventListener('click',()=>{
+     likes+= 1;
+    document.getElementById('span').innerText = likes
+    })
   })
  }
+  
    
 
 async function UpdateAllNews (){
@@ -153,7 +164,15 @@ async function UpdateAllNews (){
            <li>TIME:  ${ newsElems.time}</li>
            <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
         <ul>
+        <div id="like" >
+        <h6 id="liking">like <span id ="span">0</span> </h6>
+     </div>
        `
+       const liking = document.getElementById('liking')
+    liking.addEventListener('click',()=>{
+     likes+= 1;
+    document.getElementById('span').innerText = likes
+    })
           const image= document.getElementById("poster")
           image.innerHTML = `
           <h3 class="bg-info text-md-center " id="movie">Image</h3>
@@ -176,7 +195,7 @@ async function UpdateAllNews (){
 
 
 //  adding searching function
-// function seachingFn(){
+
  const  search_btn =document.getElementById('search')
  const  searchInput = document.getElementById ('searchInput')
  search_btn.addEventListener('click',()=>{
@@ -199,7 +218,15 @@ async function UpdateAllNews (){
     <li>TIME:  ${newsElems.time}</li>
     <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
     <ul>
+    <div id="like" >
+    <h6 id="liking">like <span id ="span">0</span> </h6>
+ </div>
     `
+    const liking = document.getElementById('liking')
+    liking.addEventListener('click',()=>{
+     likes+= 1;
+    document.getElementById('span').innerText = likes
+    })
     const Top_News = document.getElementById('Top_News')
     const News_list = document.createElement('p')
     
@@ -220,12 +247,12 @@ async function UpdateAllNews (){
       })
    })
  })
-// }
+
 
 //  calling functions
  TopUpdate();
  updateAllCatergory();
   showtime();
   UpdateAllNews()
-  seachingFn()
+ 
 })
