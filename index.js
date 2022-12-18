@@ -132,7 +132,8 @@ document.addEventListener('DOMContentLoaded',(event)=>{
        window.open(TopUpdateNews.readMoreUrl)
     })
     const liking = document.getElementById('liking')
-    liking.addEventListener('click',()=>{
+    liking.addEventListener('click',(e)=>{
+      e.preventDefault()
      likes+= 1;
     document.getElementById('span').innerText = likes
     })
@@ -169,7 +170,8 @@ async function UpdateAllNews (){
      </div>
        `
        const liking = document.getElementById('liking')
-    liking.addEventListener('click',()=>{
+    liking.addEventListener('click',(e)=>{
+      e.preventDefault()
      likes+= 1;
     document.getElementById('span').innerText = likes
     })
@@ -223,7 +225,8 @@ async function UpdateAllNews (){
  </div>
     `
     const liking = document.getElementById('liking')
-    liking.addEventListener('click',()=>{
+    liking.addEventListener('click',(e)=>{
+      e.preventDefault()
      likes+= 1;
     document.getElementById('span').innerText = likes
     })
