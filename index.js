@@ -216,6 +216,7 @@ function seachingFn(){
     `
     const Top_News = document.getElementById('Top_News')
     const News_list = document.createElement('p')
+    
     News_list.textContent=`${newsElems.title}`
     Top_News.appendChild(News_list)
   

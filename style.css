@@ -2,7 +2,19 @@ body{
   background-image: url(pexels-tima-miroshnichenko-6463213.jpg);
 }
 #body{
-  background-color: orangered;
+  background-color: rgb(255, 69, 0);
+  
+}
+.col-4{
+  background-color: rgb(255, 69, 0);
+}
+li{
+  
+  border: 2px solid rebeccapurple;
+  cursor: pointer;
+  color: rgb(31, 31, 6);
+  font-size: 4.3vh;
+  font-family: Times New Roman;
   
 }
 #Top_News{
@@ -13,7 +25,10 @@ p{
   padding: 2px 2px;
   border: 2px solid rebeccapurple;
   cursor: pointer;
-  outline: 12vh;
+  color: rgb(31, 31, 6);
+  font-size: 4vh;
+  font-family: Times New Roman;
+  background-color: aliceblue;
 }
 .card{
     background-color: aquamarine;
