@@ -190,7 +190,7 @@ async function UpdateAllNews (){
 
 
 //  adding searching function
-function seachingFn(){
+// function seachingFn(){
  const  search_btn =document.getElementById('search')
  const  searchInput = document.getElementById ('searchInput')
  search_btn.addEventListener('click',()=>{
@@ -234,7 +234,7 @@ function seachingFn(){
       })
    })
  })
-}
+// }
 
 //  calling functions
  TopUpdate();

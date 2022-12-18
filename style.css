@@ -5,8 +5,37 @@ body{
   background-color: rgb(255, 69, 0);
   
 }
+#times{
+  margin-left: 40vh;
+  font-size: 4.5vh;
+  font-weight: bolder;
+  font-family: Times New Roman;
+  background-color: aqua;
+}
+
+
+#navbar{
+    background-color: aqua;
+    font-family: Times New Roman;
+  
+    
+}
+#navb{
+  background-color: aqua;
+  font-family: Times New Roman;
+  margin-left: 12vh;
+  font-weight: bolder;
+  font-size: 5vh;
+
+  
+}
 .col-4{
   background-color: rgb(255, 69, 0);
+  font-family: Times New Roman;
+}
+#searchInput{
+  font-size: 3vh ;
+  font-family: Times New Roman;
 }
 li{
   
@@ -22,7 +51,6 @@ li{
   border: 1px solid rebeccapurple;
 }
 p{
-  padding: 2px 2px;
   border: 2px solid rebeccapurple;
   cursor: pointer;
   color: rgb(31, 31, 6);
