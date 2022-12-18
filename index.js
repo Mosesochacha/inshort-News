@@ -149,11 +149,13 @@ async function UpdateAllNews (){
   News_list.addEventListener('click',(e)=>{
     console.log("clicked");
     const Content = document.getElementById("Content")
-    fetch("https://inshorts.deta.dev/news?category=all")
+    const  searchInput = document.getElementById ('searchInput')
+    const value = searchInput.value
+    fetch(`https://inshorts.deta.dev/news?category=${value}`)
   .then((response)=>  response.json())
   .then((items)=>{
 
-    items.data.map(newsElems =>{
+    items.data.forEach(newsElems =>{
         if(e.target.innerHTML === newsElems.title){
           
             Content.innerHTML = `<ul>
@@ -199,7 +201,7 @@ function seachingFn(){
    fetch(`https://inshorts.deta.dev/news?category=${value}`)
    .then((response)=>response.json())
    .then((news)=>{
-      news.data.map(newsElems =>{
+      news.data.forEach(newsElems =>{
         const Content = document.getElementById("Content")
       
     Content.innerHTML = `<ul>
