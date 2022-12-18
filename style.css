@@ -1,6 +1,20 @@
 body{
   background-image: url(pexels-tima-miroshnichenko-6463213.jpg);
 }
+#body{
+  background-color: orangered;
+  
+}
+#Top_News{
+  padding: 2px 2px;
+  border: 1px solid rebeccapurple;
+}
+p{
+  padding: 2px 2px;
+  border: 2px solid rebeccapurple;
+  cursor: pointer;
+  outline: 12vh;
+}
 .card{
     background-color: aquamarine;
     margin-top: 50;

@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
         News.data.map(data=>{
             const title = data.title
             const Top_News = document.getElementById('Top_News')
-            const News_list = document.createElement('li')
+            const News_list = document.createElement('p')
             News_list.innerHTML=`${title}`
             Top_News.appendChild(News_list)
             
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     const TopUpdateNews = item.data[0] 
     const Content = document.getElementById("Content")
       
-    Content.innerHTML = `<ol>
+    Content.innerHTML = `<ul>
     <h3 class="bg-info text-md-center " id="movie">INFORMATION</h3>
     <li>AUTHOR:  ${TopUpdateNews.author}</li>
     <li>TITLE:  ${TopUpdateNews.title}</li>
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     <li>DATE:  ${TopUpdateNews.date}</li>
     <li>TIME:  ${TopUpdateNews.time}</li>
     <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
-    <ol>
+    <ul>
     `
     const image= document.getElementById("poster")
     image.innerHTML = `
@@ -129,17 +129,34 @@ document.addEventListener('DOMContentLoaded',(event)=>{
   })
  }
    
+//  async function UpdateAllNews(){
+//   const  Top_News = document.getElementById("Top_News")
+//   Top_News.addEventListener('click',(e)=>{
+//     fetch("https://inshorts.deta.dev/news?category=all")
+//     .then((response)=>response.json())
+//     .then((itemElems)=>{
+//       itemElems.data.map(newItems=>{
+//      if(e.target.innerHTML === newItems.title){
+//       console.log(newItems.title);
+//      }
+//       })
+//     })
+//   })
+//  }
 
-async function UpdateAllNews (e){
+async function UpdateAllNews (){
   const  News_list = document.getElementById('Top_News')
   News_list.addEventListener('click',(e)=>{
+    console.log("clicked");
     const Content = document.getElementById("Content")
     fetch("https://inshorts.deta.dev/news?category=all")
   .then((response)=>  response.json())
   .then((items)=>{
+
     items.data.map(newsElems =>{
         if(e.target.innerHTML === newsElems.title){
-          Content.innerHTML = `<ol>
+          
+            Content.innerHTML = `<ul>
           <h3 class="bg-info text-md-center " id="movie">INFORMATION</h3>
           <li>AUTHOR:  ${ newsElems.author}</li>
            <li>TITLE:  ${ newsElems.title}</li>
@@ -147,7 +164,7 @@ async function UpdateAllNews (e){
           <li>DATE:  ${ newsElems.date}</li>
            <li>TIME:  ${ newsElems.time}</li>
            <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
-        <ol>
+        <ul>
        `
           const image= document.getElementById("poster")
           image.innerHTML = `
@@ -171,52 +188,55 @@ async function UpdateAllNews (e){
 
 
 //  adding searching function
+function seachingFn(){
  const  search_btn =document.getElementById('search')
  const  searchInput = document.getElementById ('searchInput')
  search_btn.addEventListener('click',()=>{
   const Top_News = document.getElementById('Top_News')
   Top_News.innerHTML=""
   const value = searchInput.value
+
    fetch(`https://inshorts.deta.dev/news?category=${value}`)
    .then((response)=>response.json())
    .then((news)=>{
-      news.data.map(TopUpdateNews=>{
+      news.data.map(newsElems =>{
         const Content = document.getElementById("Content")
       
-    Content.innerHTML = `<ol>
+    Content.innerHTML = `<ul>
     <h3 class="bg-info text-md-center " id="movie">INFORMATION</h3>
-    <li>AUTHOR:  ${TopUpdateNews.author}</li>
-    <li>TITLE:  ${TopUpdateNews.title}</li>
-    <li>CONTENT:  ${TopUpdateNews.content}</li>
-    <li>DATE:  ${TopUpdateNews.date}</li>
-    <li>TIME:  ${TopUpdateNews.time}</li>
+    <li>AUTHOR:  ${newsElems.author}</li>
+    <li>TITLE:  ${newsElems.title}</li>
+    <li>CONTENT:  ${newsElems.content}</li>
+    <li>DATE:  ${newsElems.date}</li>
+    <li>TIME:  ${newsElems.time}</li>
     <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
-    <ol>
+    <ul>
     `
     const Top_News = document.getElementById('Top_News')
-    const News_list = document.createElement('li')
-    News_list.textContent=`${TopUpdateNews.title}`
+    const News_list = document.createElement('p')
+    News_list.textContent=`${newsElems.title}`
     Top_News.appendChild(News_list)
   
     
     const image= document.getElementById("poster")
     image.innerHTML = `
     <h3 class="bg-info text-md-center " id="movie">Image</h3>
-    <img id = "img" src=${TopUpdateNews.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
+    <img id = "img" src=${newsElems.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
   
     `
     const read = document.getElementById('read')
     read.addEventListener('click',()=>{
-       window.open(TopUpdateNews.readMoreUrl)
+       window.open(newsElems.readMoreUrl)
     })
       })
    })
  })
-
+}
 
 //  calling functions
  TopUpdate();
  updateAllCatergory();
   showtime();
   UpdateAllNews()
+  seachingFn()
 })
