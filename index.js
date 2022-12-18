@@ -129,20 +129,6 @@ document.addEventListener('DOMContentLoaded',(event)=>{
   })
  }
    
-//  async function UpdateAllNews(){
-//   const  Top_News = document.getElementById("Top_News")
-//   Top_News.addEventListener('click',(e)=>{
-//     fetch("https://inshorts.deta.dev/news?category=all")
-//     .then((response)=>response.json())
-//     .then((itemElems)=>{
-//       itemElems.data.map(newItems=>{
-//      if(e.target.innerHTML === newItems.title){
-//       console.log(newItems.title);
-//      }
-//       })
-//     })
-//   })
-//  }
 
 async function UpdateAllNews (){
   const  News_list = document.getElementById('Top_News')
