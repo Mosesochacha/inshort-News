@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     const Bottom = document.getElementById('Bottom')
 
       startbtn.addEventListener('click',()=>{
+        
        getstarted.removeAttribute('hidden')
        getstarted.style.display = "flex"
     })
