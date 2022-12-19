@@ -14,11 +14,22 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     const times = document.getElementById('time')
     const loginbtn = document.getElementById('loginbtn')
     const landingpage = document.getElementById('landingpage')
+    const getstarted= document.getElementById('getstarted')
+    const startbtn = document.getElementById('startbtn')
+     const page1 =document.getElementById('page1')
+    const Bottom = document.getElementById('Bottom')
 
-    loginbtn.addEventListener('click',()=>{
+      startbtn.addEventListener('click',()=>{
+        console.log('hello');
+     getstarted.removeAttribute('hidden')
+      getstarted.style.display = "flex"
+    })
+
+    loginbtn.addEventListener('click',(e)=>{
+      e.preventDefault()
        landingpage.style.display="none"
        signup.removeAttribute('hidden')
-       signup.style.display =('flex')
+       signup.style.display = 'flex'
     })
 
 
