@@ -12,7 +12,16 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     const bodys = document.getElementById('body') 
     const image = document.getElementById('poster')
     const times = document.getElementById('time')
-   
+    const loginbtn = document.getElementById('loginbtn')
+    const landingpage = document.getElementById('landingpage')
+
+    loginbtn.addEventListener('click',()=>{
+       landingpage.style.display="none"
+       signup.removeAttribute('hidden')
+       signup.style.display =('flex')
+    })
+
+
 
 
      // CLICK EVENTS FOR LINKS
