@@ -1,9 +1,51 @@
 body{
-  background-image: url(pexels-tima-miroshnichenko-6463213.jpg);
+  background-color: bisque
+}
+#top{
+
+  border: 1vh solid beige;
 }
 #body{
   background-color: rgb(255, 69, 0);
   
+}
+#feutures{
+  background-color: rgb(255, 69, 0);
+  margin-left: 3vh;
+  padding: 0vh 6vh;
+}
+#contact{
+  background-color: rgb(255, 69, 0);
+  margin-left: 3vh;
+  padding: 0vh 6vh;
+}
+#work{
+  background-color: rgb(255, 69, 0);
+  margin-left: 3vh;
+  padding: 0vh 6vh;
+}
+#landImg{
+  height:90vh;
+  width: 100vh;
+  
+}
+#startbtn{
+  background-color: rgb(255, 69, 0);
+  margin-left: 3vh;
+  padding: 0vh 6vh;
+}
+#loginbtn{
+  
+  background-color: rgb(255, 69, 0);
+  margin-left: 112vh;
+  padding: 0vh 6vh;
+  
+}
+#Bottom{
+ background-color: bisque;
+}
+#Top{
+ background-color: aquamarine;
 }
 #times{
   margin-left: 40vh;
