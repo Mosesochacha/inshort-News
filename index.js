@@ -20,9 +20,8 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     const Bottom = document.getElementById('Bottom')
 
       startbtn.addEventListener('click',()=>{
-        console.log('hello');
-     getstarted.removeAttribute('hidden')
-      getstarted.style.display = "flex"
+       getstarted.removeAttribute('hidden')
+       getstarted.style.display = "flex"
     })
 
     loginbtn.addEventListener('click',(e)=>{
