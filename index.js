@@ -23,8 +23,11 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     const feutures = document.getElementById('feutures')
      const featureInfo = document.getElementById('featureInfo')
      const landImg = document.getElementById('landImg')
+     const comments = document.getElementById('comments')
+    
 
 
+     
      landImg.addEventListener('click',()=>{
       contactUs.style.display ="none"
       featureInfo.style.display ='none'
@@ -182,11 +185,23 @@ document.addEventListener('DOMContentLoaded',(event)=>{
         </div>
         </div>
         <a id = "show" href="">show Coments</a> <br>
-       <a href="hide">hide comments</a>  
+       <a href id="hide">hide comments</a>  
     
     
  
     `
+    const show = document.getElementById('show')
+    const hide = document.getElementById('hide')
+
+    hide.addEventListener('click',()=>{
+      comments.style.display = "none"
+    })
+
+    show.addEventListener('click',()=>{
+      comments.removeAttribute('hidden')
+      comments.style.display = "flex"
+    })
+
 
     const image= document.getElementById("poster")
     image.innerHTML = `
@@ -258,10 +273,26 @@ async function UpdateAllNews (){
         </div>
         </div>
         <a id = "show" href="">show Coments</a> <br>
-        <a href="hide">hide comments</a>
+        <a href id="hide">hide comments</a>
        `
+       const show = document.getElementById('show')
+       const hide = document.getElementById('hide')
+
+       hide.addEventListener('click',(e)=>{
+        e.preventDefault()
+        comments.style.display = "none"
+      })
+
+      show.addEventListener('click',(e)=>{
+        e.preventDefault()
+        comments.removeAttribute('hidden')
+        comments.style.display = "flex"
+      })
+
+
        const btbtn = document.getElementById('btbtn')
-    btbtn.addEventListener('click',()=>{
+    btbtn.addEventListener('click',(e)=>{
+      e.preventDefault()
       const commend = document.getElementById('commend')
       const inputv =document.getElementById('inputv')
       const value = inputv.value
@@ -335,8 +366,24 @@ async function UpdateAllNews (){
     <h6 id="liking">like <span id ="span">0</span> </h6>
  </div>
  <a id = "show" href="">show Coments</a> <br>
- <a href="hide">hide comments</a>
+ <a href id="hide">hide comments</a>
     `
+    const show = document.getElementById('show')
+    const hide = document.getElementById('hide')
+
+    hide.addEventListener('click',(e)=>{
+      e.preventDefault(e)
+      e.preventDefault()
+      comments.style.display = "none"
+    })
+
+    show.addEventListener('click',(e)=>{
+      e.preventDefault()
+      comments.removeAttribute('hidden')
+      comments.style.display = "flex"
+    })
+
+
     const btbtn = document.getElementById('btbtn')
     btbtn.addEventListener('click',()=>{
       const commend = document.getElementById('commend')
