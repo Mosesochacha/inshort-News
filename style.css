@@ -1,6 +1,10 @@
 body{
-  background-color: bisque
+  background-color: bisque;
+ padding: 0%;
+ margin: 0%;
 }
+
+
 #top{
 
   border: 1vh solid beige;

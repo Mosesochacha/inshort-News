@@ -22,6 +22,14 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     const contact = document.getElementById('contact')
     const feutures = document.getElementById('feutures')
      const featureInfo = document.getElementById('featureInfo')
+     const landImg = document.getElementById('landImg')
+
+     landImg.addEventListener('click',()=>{
+      contactUs.style.display ="none"
+      featureInfo.style.display ='none'
+      getstarted.style.display = "none"
+     })
+
 
     feutures.addEventListener('click',()=>{
       featureInfo.removeAttribute('hidden')
