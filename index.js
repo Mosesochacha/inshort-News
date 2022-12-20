@@ -18,8 +18,6 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     const startbtn = document.getElementById('startbtn')
      const page1 =document.getElementById('page1')
     const Bottom = document.getElementById('Bottom')
-    const work = document.getElementById("work") 
-    const working = document.getElementById('working')
     const contactUs = document.getElementById('contactUs')
     const contact = document.getElementById('contact')
     const feutures = document.getElementById('feutures')
@@ -29,7 +27,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
       featureInfo.removeAttribute('hidden')
       featureInfo.style.display ='flex'
       contactUs.style.display = "none"
-      working.style.display = "none"
+     
       getstarted.style.display = "none"
     })
 
@@ -37,24 +35,13 @@ document.addEventListener('DOMContentLoaded',(event)=>{
       contactUs.removeAttribute('hidden')
       contactUs.style.display ="flex"
       featureInfo.style.display ='none'
-      working.style.display = "none"
       getstarted.style.display = "none"
     })
-    work.addEventListener('click',()=>{
-      working.removeAttribute("hidden")
-      working.style.display = "flex"
-      contactUs.style.display ="none"
-      featureInfo.style.display ='none'
-      getstarted.style.display = "none"
-    })
-
-
-      startbtn.addEventListener('click',()=>{
+         startbtn.addEventListener('click',()=>{
 
        getstarted.removeAttribute('hidden')
        getstarted.style.display = "flex"
-       working.style.display = "none"
-       contactUs.style.display ="none"
+          contactUs.style.display ="none"
        featureInfo.style.display ='none'
       
     })

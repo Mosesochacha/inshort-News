@@ -14,10 +14,7 @@ body{
   margin-left: 3vh;
   padding: 0vh 6vh;
 }
-#featureInfo{
-  margin: 1vh solid bisque;
-  background-color: #000;
-}
+
 #contact{
   background-color: rgb(255, 69, 0);
   margin-left: 3vh;
@@ -69,8 +66,8 @@ body{
   margin-top: 2px;
   font-size: 6vh;
   font-family: Times New Roman;
- }
-
+ 
+}
 
 #navbar{
     background-color: aqua;
