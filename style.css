@@ -38,8 +38,8 @@ body{
   padding: 0vh 6vh;
 }
 #landImg{
-  margin-left: auto;
-  width: 247vh;
+  width: 1300px;
+  height: 80vh;
   
 }
 #headline{
@@ -82,6 +82,12 @@ body{
   font-size: 6vh;
   font-family: Times New Roman;
  
+}
+div {
+  min-width: auto;
+  min-width: auto;
+height: auto;
+width: auto;
 }
 
 #navbar{
