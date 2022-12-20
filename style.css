@@ -94,19 +94,21 @@ body{
   font-family: Times New Roman;
   background-color: aqua;
 }
- /* #liking{
+ #liking{
   color: aqua;
   font-weight: 200;
   cursor: pointer;
-  border: 1vh solid darkblue;
-  width: 20vh;
-  height: 10vh;
-  outline: 2px;
-  margin-top: 2px;
-  font-size: 6vh;
-  font-family: Times New Roman; */
+  padding: 2px 2px;
+  font-family: Times New Roman;
  
-/* } */
+}
+
+#comments  li{
+  font-size: 2vh;
+  background-color: aliceblue;
+  padding: 0%;
+  border: 0ch;
+}
 div {
   min-width: auto;
   min-width: auto;

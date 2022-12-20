@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     const feutures = document.getElementById('feutures')
      const featureInfo = document.getElementById('featureInfo')
      const landImg = document.getElementById('landImg')
-     const comments = document.getElementById('comments')
+     
     
 
 
@@ -172,34 +172,35 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     <h6 id="liking">like <span id ="span">0</span> </h6>
     <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
     <ul>
-    <i id="liking" class="material-icons" >favorite</i>
-    div class="form-control">
+   
         <input id= "inputv" type="text" placeholder="Type your coment">
          <button id = "btbtn" type="submit">comment</button>
         <div>
-        <img src="" alt="">
-        <img src="" alt="">
+        <a id = "show" href="">show Coments</a> <br>
+        <a href id="hide">hide comments</a> 
         <div id="comments" hidden> 
            <ul id= "commend">
            </ul>
         </div>
         </div>
-        <a id = "show" href="">show Coments</a> <br>
-       <a href id="hide">hide comments</a>  
+       
     
     
  
     `
+    const comments = document.getElementById('comments')
     const show = document.getElementById('show')
     const hide = document.getElementById('hide')
 
-    hide.addEventListener('click',()=>{
+    hide.addEventListener('click',(e)=>{
+      e.preventDefault();
       comments.style.display = "none"
     })
 
-    show.addEventListener('click',()=>{
+    show.addEventListener('click',(e)=>{
+      e.preventDefault();
       comments.removeAttribute('hidden')
-      comments.style.display = "flex"
+      comments.style.display = "block"
     })
 
 
@@ -211,7 +212,8 @@ document.addEventListener('DOMContentLoaded',(event)=>{
 
     
     const btbtn = document.getElementById('btbtn')
-    btbtn.addEventListener('click',()=>{
+    btbtn.addEventListener('click',(e)=>{
+      e.preventDefault();
       const commend = document.getElementById('commend')
       const inputv =document.getElementById('inputv')
       const value = inputv.value
@@ -261,20 +263,21 @@ async function UpdateAllNews (){
         <div id="like" >
         <h6 id="liking">like <span id ="span"></span> </h6>
      </div>
-     div class="form-control">
+     
         <input id= "inputv" type="text" placeholder="Type your coment">
          <button id = "btbtn" type="submit">comment</button>
         <div>
-        <img src="" alt="">
-        <img src="" alt="">
+        
+        <a id = "show" href="">show Coments</a> <br>
+        <a href id="hide">hide comments</a>
         <div id="comments" hidden > 
            <ul id= "commend">
            </ul>
         </div>
         </div>
-        <a id = "show" href="">show Coments</a> <br>
-        <a href id="hide">hide comments</a>
+       
        `
+       const comments = document.getElementById('comments')
        const show = document.getElementById('show')
        const hide = document.getElementById('hide')
 
@@ -286,7 +289,7 @@ async function UpdateAllNews (){
       show.addEventListener('click',(e)=>{
         e.preventDefault()
         comments.removeAttribute('hidden')
-        comments.style.display = "flex"
+        comments.style.display = "block"
       })
 
 
@@ -351,12 +354,12 @@ async function UpdateAllNews (){
     <li>TIME:  ${newsElems.time}</li>
     <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
     <ul>
-    div class="form-control">
+  
     <input id= "inputv" type="text" placeholder="Type your coment">
      <button id = "btbtn" type="submit">comment</button>
     <div>
-    <img src="" alt="">
-    <img src="" alt="">
+    <a id = "show" href="">show Coments</a> <br>
+ <a href id="hide">hide comments</a>
     <div id="comments" hidden> 
        <ul id= "commend">
        </ul>
@@ -365,27 +368,27 @@ async function UpdateAllNews (){
     <div id="like" >
     <h6 id="liking">like <span id ="span">0</span> </h6>
  </div>
- <a id = "show" href="">show Coments</a> <br>
- <a href id="hide">hide comments</a>
+ 
     `
+    const comments = document.getElementById('comments')
     const show = document.getElementById('show')
     const hide = document.getElementById('hide')
 
     hide.addEventListener('click',(e)=>{
-      e.preventDefault(e)
-      e.preventDefault()
+      e.preventDefault();
       comments.style.display = "none"
     })
 
     show.addEventListener('click',(e)=>{
-      e.preventDefault()
+      e.preventDefault();
       comments.removeAttribute('hidden')
       comments.style.display = "flex"
     })
 
 
     const btbtn = document.getElementById('btbtn')
-    btbtn.addEventListener('click',()=>{
+    btbtn.addEventListener('click',(e)=>{
+      e.preventDefault();
       const commend = document.getElementById('commend')
       const inputv =document.getElementById('inputv')
       const value = inputv.value
@@ -397,7 +400,7 @@ async function UpdateAllNews (){
 
     const liking = document.getElementById('liking')
     liking.addEventListener('click',(e)=>{
-      e.preventDefault()
+      e.preventDefault();
      likes+= 1;
     document.getElementById('span').innerText = likes
     })
