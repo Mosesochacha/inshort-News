@@ -40,7 +40,7 @@ body{
 }
 #landImg{
   width: 1300px;
-  height: 80vh;
+  height: 150vh;
   
 }
 #headline{
@@ -57,6 +57,28 @@ body{
   margin-left: 150px;
   padding: 0vh 6vh;
   
+}
+#documentation{
+  margin-top: 2vh;
+  background-color: antiquewhite;
+  margin-left: 27vh;
+  width: 45vh;
+
+
+}
+#using{
+  margin-top: -49vh;
+  background-color: antiquewhite;
+  margin-left: 60vh;
+  width: 45vh;
+
+
+}
+#application{
+  background-color: antiquewhite;
+  margin-left: 0vh;
+  margin: 2vh;
+  width: 45vh;
 }
 #Bottom{
  background-color: bisque;
@@ -136,10 +158,9 @@ p{
   background-color: aliceblue;
 }
 .card{
-    background-color: aquamarine;
     margin-top: 50;
-    height: auto;
-    width: 400px;
+    height: fit-content;
+    width: 600px;
     color: #000;
     margin-left: 50vh;
 
