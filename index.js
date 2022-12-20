@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
      const featureInfo = document.getElementById('featureInfo')
      const landImg = document.getElementById('landImg')
 
+
      landImg.addEventListener('click',()=>{
       contactUs.style.display ="none"
       featureInfo.style.display ='none'
@@ -111,6 +112,7 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     
     
              })
+             
 
            forget.addEventListener('click',()=>{
             signin.style.display = "none"
@@ -167,15 +169,42 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     <h6 id="liking">like <span id ="span">0</span> </h6>
     <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
     <ul>
+    <i id="liking" class="material-icons" >favorite</i>
+    div class="form-control">
+        <input id= "inputv" type="text" placeholder="Type your coment">
+         <button id = "btbtn" type="submit">comment</button>
+        <div>
+        <img src="" alt="">
+        <img src="" alt="">
+        <div id="comments" hidden> 
+           <ul id= "commend">
+           </ul>
+        </div>
+        </div>
+        <a id = "show" href="">show Coments</a> <br>
+       <a href="hide">hide comments</a>  
     
     
  
     `
+
     const image= document.getElementById("poster")
     image.innerHTML = `
     <h3 class="bg-info text-md-center " id="movie">Image</h3>
     <img id = "img" src=${TopUpdateNews.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
     `
+
+    
+    const btbtn = document.getElementById('btbtn')
+    btbtn.addEventListener('click',()=>{
+      const commend = document.getElementById('commend')
+      const inputv =document.getElementById('inputv')
+      const value = inputv.value
+      const comment = document.createElement('li' )
+      comment.innerHTML = value
+      commend.appendChild(comment)
+      
+    })
     const read = document.getElementById('read')
     read.addEventListener('click',()=>{
        window.open(TopUpdateNews.readMoreUrl)
@@ -217,7 +246,30 @@ async function UpdateAllNews (){
         <div id="like" >
         <h6 id="liking">like <span id ="span"></span> </h6>
      </div>
+     div class="form-control">
+        <input id= "inputv" type="text" placeholder="Type your coment">
+         <button id = "btbtn" type="submit">comment</button>
+        <div>
+        <img src="" alt="">
+        <img src="" alt="">
+        <div id="comments" hidden > 
+           <ul id= "commend">
+           </ul>
+        </div>
+        </div>
+        <a id = "show" href="">show Coments</a> <br>
+        <a href="hide">hide comments</a>
        `
+       const btbtn = document.getElementById('btbtn')
+    btbtn.addEventListener('click',()=>{
+      const commend = document.getElementById('commend')
+      const inputv =document.getElementById('inputv')
+      const value = inputv.value
+      const comment = document.createElement('li' )
+      comment.innerHTML = value
+      commend.appendChild(comment)
+      
+    })
        const liking = document.getElementById('liking')
     liking.addEventListener('click',(e)=>{
       e.preventDefault()
@@ -226,7 +278,6 @@ async function UpdateAllNews (){
     })
           const image= document.getElementById("poster")
           image.innerHTML = `
-          <h3 class="bg-info text-md-center " id="movie">Image</h3>
           <img id = "img" src=${newsElems.imageUrl} alt=""class="card-img rounded mx-auto d-block" >
           `
           const read = document.getElementById('read')
@@ -269,10 +320,34 @@ async function UpdateAllNews (){
     <li>TIME:  ${newsElems.time}</li>
     <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
     <ul>
+    div class="form-control">
+    <input id= "inputv" type="text" placeholder="Type your coment">
+     <button id = "btbtn" type="submit">comment</button>
+    <div>
+    <img src="" alt="">
+    <img src="" alt="">
+    <div id="comments" hidden> 
+       <ul id= "commend">
+       </ul>
+    </div>
+    </div>
     <div id="like" >
     <h6 id="liking">like <span id ="span">0</span> </h6>
  </div>
+ <a id = "show" href="">show Coments</a> <br>
+ <a href="hide">hide comments</a>
     `
+    const btbtn = document.getElementById('btbtn')
+    btbtn.addEventListener('click',()=>{
+      const commend = document.getElementById('commend')
+      const inputv =document.getElementById('inputv')
+      const value = inputv.value
+      const comment = document.createElement('li' )
+      comment.innerHTML = value
+      commend.appendChild(comment)
+      
+    })
+
     const liking = document.getElementById('liking')
     liking.addEventListener('click',(e)=>{
       e.preventDefault()

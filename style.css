@@ -94,7 +94,7 @@ body{
   font-family: Times New Roman;
   background-color: aqua;
 }
- #liking{
+ /* #liking{
   color: aqua;
   font-weight: 200;
   cursor: pointer;
@@ -104,9 +104,9 @@ body{
   outline: 2px;
   margin-top: 2px;
   font-size: 6vh;
-  font-family: Times New Roman;
+  font-family: Times New Roman; */
  
-}
+/* } */
 div {
   min-width: auto;
   min-width: auto;
