@@ -67,9 +67,9 @@ body{
 
 }
 #using{
-  margin-top: -49vh;
+  margin-top: -1vh;
   background-color: antiquewhite;
-  margin-left: 60vh;
+  margin-left: 50vh;
   width: 45vh;
 
 
@@ -78,7 +78,8 @@ body{
   background-color: antiquewhite;
   margin-left: 0vh;
   margin: 2vh;
-  width: 45vh;
+  width: 60vh;
+  background-attachment: fixed;
 }
 #Bottom{
  background-color: bisque;
@@ -157,10 +158,14 @@ p{
   font-family: Times New Roman;
   background-color: aliceblue;
 }
+#reach{
+  height: 2vh;
+  width: 2vh;
+}
 .card{
-    margin-top: 50;
+    margin-top: 2vh;
     height: fit-content;
-    width: 600px;
+    width: fit-content;
     color: #000;
     margin-left: 50vh;
 
