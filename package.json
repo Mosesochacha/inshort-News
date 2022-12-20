@@ -1,0 +1,25 @@
+{
+  "name": "inshort-news",
+  "version": "1.0.0",
+  "description": "Inshort news",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mosesochacha/inshort-News.git"
+  },
+  "keywords": [
+    "js",
+    "css",
+    "html",
+    "bootstrap"
+  ],
+  "author": "Moses Ochacha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mosesochacha/inshort-News/issues"
+  },
+  "homepage": "https://github.com/Mosesochacha/inshort-News#readme"
+}
