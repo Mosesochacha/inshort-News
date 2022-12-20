@@ -199,7 +199,7 @@ async function UpdateAllNews (){
           
             Content.innerHTML = `<ul>
           <h3 class="bg-info text-md-center " id="movie">INFORMATION</h3>
-          <li>AUTHOR:  ${ newsElems.author}</li>
+          <li>AUTHOR:  ${ newsElems.author} </li>
            <li>TITLE:  ${ newsElems.title}</li>
            <li>CONTENT:  ${ newsElems.content}</li>
           <li>DATE:  ${ newsElems.date}</li>
@@ -207,7 +207,7 @@ async function UpdateAllNews (){
            <p class="text-muted mt-auto mb-0">get more stories here! <a id="read" href= ""><u>Readmore</u></a></p>
         <ul>
         <div id="like" >
-        <h6 id="liking">like <span id ="span">0</span> </h6>
+        <h6 id="liking">like <span id ="span"></span> </h6>
      </div>
        `
        const liking = document.getElementById('liking')

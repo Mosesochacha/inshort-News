@@ -26,9 +26,12 @@ body{
   padding: 0vh 6vh;
 }
 #landImg{
-  height:90vh;
-  width: 100vh;
+  margin-left: auto;
+  width: 247vh;
   
+}
+#headline{
+  color: white;
 }
 #startbtn{
   background-color: rgb(255, 69, 0);
