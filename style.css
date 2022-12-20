@@ -16,6 +16,7 @@ body{
 #top{
 
   border: 1vh solid beige;
+  text-align: center;
 }
 #body{
   background-color: rgb(255, 69, 0);
@@ -53,7 +54,7 @@ body{
 #loginbtn{
   
   background-color: rgb(255, 69, 0);
-  margin-left: 112vh;
+  margin-left: 150px;
   padding: 0vh 6vh;
   
 }
