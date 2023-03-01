@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
@@ -9,217 +10,228 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>inshortnews</title>
 </head>
+
 <body>
     <!-- Navbar and search form -->
-     <nav class="navbar opacity-55" id="navbar" hidden>
+    <nav class="navbar opacity-55" id="navbar" hidden>
         <div class="container-fluid" aria-hidden="true">
             <a id="navb" href="#" class="navbar-brand">InShortNews</a>
             <ul class="navbar-nav me-auto d-flex flex-row " id="times"></ul>
             <div class="btn-group">
-                <select  id="select" class="bg-danger form-control me-2" placeholder="CATEGORIES">
-                    <option id="value">CATEGORIES</option>
-                    <option  id="value">all</option>
-                    <option  id="value">business</option>
-                    <option  id="value">sports</option>
-                    <option  id="value">world</option>
-                    <option  id="value">politics</option>
-                    <option  id="value">startup</option>
-                    <option  id="value">entertainment</option>
-                    <option  id="value">miscellaneous</option>
-                    <option  id="value">hatke</option>
-                    <option  id="value">science</option>
-                    <option  id="value">automobile</option>
-                    
+                <select id="select" class="bg-danger form-control me-2" placeholder="CATEGORIES">
+                    <option id="value">Categories</option>
+                    <option id="value">All</option>
+                    <option id="value">Business</option>
+                    <option id="value">Sports</option>
+                    <option id="value">World</option>
+                    <option id="value">Politics</option>
+                    <option id="value">Startup</option>
+                    <option id="value">Entertainment</option>
+                    <option id="value">Miscellaneous</option>
+                    <option id="value">Hatke</option>
+                    <option id="value">Science</option>
+                    <option id="value">Automobile</option>
                 </select>
-              </div>
-              
+            </div>
+
             <!-- SEARCHING FORM -->
             <form action="search" id="searching" class="d-flex">
                 <input id="searchInput" type="search" class="form-control me-2" placeholder="Enter Category name">
                 <button id="search" class="btn btn-outline-success " type="submit">SEARCH</button>
             </form>
-            
-        </div> 
-      
-        
-     </nav>
-    
-    
-   <div>
-    
-   </div>
 
-     <!-- sign-up form -->
-     <div class="card flex-column opacity-25% " id="signup"  aria-required="true" hidden>
-        <form > 
+        </div>
+
+
+    </nav>
+
+
+    <div>
+
+    </div>
+
+    <!-- sign-up form -->
+    <div class="card flex-column opacity-25% " id="signup" aria-required="true" hidden>
+        <form>
             <title>sign-up</title>
-            <h5 class="header" style="text-align: center;">sign-up</h5>
+            <input type="button" id="buttonHome" value="Home" onclick="myFunction()">
+            <script>
+                function myFunction() {
+                    window.location.href = "index.html";
+                }
+            </script>
+            <h5 class="header">sign-up</h5>
             <div class="col-auto">
-                  
                 <label for="inputfirstname" class="form-label">FirstName</label>
-                <input type="text"  placeholder="enter your last name" required > 
+                <input type="text" placeholder="Enter your first name" required>
             </div>
-
             <div class="col-auto">
                 <label for="inputlastname" class="form-label">LastName</label>
-                <input type="text"  placeholder="enter your last name"required > 
+                <input type="text" placeholder="Enter your last name" required>
             </div>
-
-            <div class="col-auto" >
+            <div class="col-auto">
                 <label id="email" for="email" class="form-label">Email </label>
-                <input type="email"  placeholder="enter your email"required > 
+                <input type="email" placeholder="Enter your email" required>
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password"  id="exampleInputPassword1" required>
-              </div>
+            <div class="col-auto">
+                <label id="exampleInputPassword1" for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" placeholder="Enter your password" required>
+            </div>
 
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-success btn-;block btn-lg gradient-custom-4 text-body" id="btn-r">Register</button>
-              </div>
-              <p class="text-center text-muted mt-5 mb-0">Have already an account? <a id= "loghere" href="#!"><u>Login here</u></a></p>
+            </div>
+            <p class="text-center text-muted mt-5 mb-0">Have already an account? <a id="loghere" href="#!"><u>Login here</u></a></p>
         </form>
-             </div>
+    </div>
 
 
 
-             <!-- sign in form -->
+    <!-- sign in form -->
 
-             <div class="card flex-column opacity-25% " id="signin" hidden>
-                <form >
-                    <title>loging _in</title>
-                    <h5 class="header" style="text-align: center;">sign-in</h5>
-                    <div class="col-auto">
-                        <label for="inputUserEmail" class="form-label">UserEmail </label>
-                        <input type="text"  placeholder="enter your Username" required> 
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password"  id="exampleInputPassword1" required>
-                      </div>
-
-
-                    <div class="d-flex justify-content-center">
-                        <button type="submit"  class="btn btn-success btn-;block btn-lg gradient-custom-4 text-body" id="login">log In</button>
-                      </div>
-        
-                      <p class="text-center text-muted mt-2 mb-0"> <a id= "forget" href="#!"><u>Forgotten password</u></a></p>
-        
-                </form>
-                     </div>
+    <div class="card flex-column opacity-25% " id="signin" hidden>
+        <form>
+            <title>loging _in</title>
+            <input type="button" value="Home" onclick="myFunction()">
+            <script>
+                function myFunction() {
+                    window.location.href = "index.html";
+                }
+            </script>
+            <h5 class="header" style="text-align: center;">sign-in</h5>
+            <div class="col-auto">
+                <label for="inputUserEmail" class="form-label">UserEmail </label>
+                <input type="text" placeholder="enter your Username" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" id="exampleInputPassword1" required>
+            </div>
 
 
-                     <!-- landing page -->
-                     <div class="container-fluid " id="landingpage"  style="font-family: Times New Roman; background-image: url(breaking-news-news.gif);">
-                        <div id="headline" class="col-12 text-center " style="font-family: 'Times New Roman', Times, serif;  background-image: url(breaking-news-news.gif);" >
-                            <h3> Welcome To INSHORT NEWS </h3>
-                            <h4>This is The secure place to get the latest updates</h4>
-                        </div>
-                           
-                        <div class="col-12 d-flex me-12 align-middle" id="top" style="background-image: url(breaking-news-news.gif);">
-                            <button id="loginbtn">Login</button>
-                            <button id="startbtn"><Datag>Doc</Datag></button>
-                            <button id="contact">Contack us</button>
-                            <button id="feutures">Features</button>
-                            
-                         
-                        </div>
-                        <div class="container-fluid" style="background-image: url(breaking-news-news.gif);">
-                        <div class="row " id="Bottom" >
-                            <div class="text-center col-2" >
-                                <img id="landImg" src="breaking-news-news.gif" class="rounded opacity-20" alt="...">
-                              </div>
-                          <div id="contactUs"   class="Contact card col-4" style="background-color: bisque;" hidden>
-                          <img src="" alt="">
-                              <span> for more information reach to us via:</span>
-                              <span><img id = "reach" src="icons/Gmail_icon_(2020).svg.png" alt=""> : ochachamoses443@gmail.com ;</span>
-                              <span><img  id = "reach" src="./icons/124034.png" alt=""> 0712955568 ;</span>
-                              <span><img id = "reach" src="./icons/124010.png"alt=""> : Moses Ochacha</span>
-                              <span> <img  id = "reach" src="./icons/images.jpeg" alt=""> 0784596400</span>
-                              <span>Located at Kibra Jamhuri Phase 1 ;</span>
-                          </div>
-                          <div id="featureInfo" class="features card mt-2 col-4" style="background-color: bisque;" hidden>
-                            <h2>Authentication </h2>
-                            <span>This feature is more secured and no one can be able access your personal details.</span>
-                            <span>Please ensure to follow the right steps to opt in.</span>
-                            <h3 >Doc</h3>
-                            <span>This means Documentation.</span>
-                            <span>At this point you will be able to get more expanation about the website.</span>
-                            <h3>searching</h3>
-                            <span>This feature will enable you to search news categories (sports ,science,hatke ...) of your choice.</span>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-success btn-;block btn-lg gradient-custom-4 text-body" id="login">log In</button>
+            </div>
+
+            <p class="text-center text-muted mt-2 mb-0"> <a id="forget" href="#!"><u>Forgotten password</u></a></p>
+
+        </form>
+    </div>
 
 
-                          </div>
+    <!-- landing page -->
+    <div class="container-fluid " id="landingpage">
+        <div id="headline" class="col-12 text-center ">
+            <h3> Welcome To INSHORT NEWS </h3>
+            <h4>This is The secure place to get the latest updates</h4>
+        </div>
+
+        <div class="col-12 d-flex justify-content-center align-items-center" id="top">
+            <button id="loginbtn" class="mx-2">Login</button>
+            <button id="startbtn" class="mx-2">
+                <datag>Doc</datag>
+            </button>
+            <button id="contact" class="mx-2">Contact us</button>
+            <button id="feutures" class="mx-2">Features</button>
+        </div>
+        <div class="container-fluid">
+            <div class="row " id="Bottom">
+                <div class="text-center col-12">
+                    <img id="landImg" src="breaking-news-news.gif" class="rounded opacity-20" alt="...">
+                </div>
+                <div id="contactUs" class="Contact card col-4" hidden>
+                    <img src="" alt="">
+                    <span> for more information reach to us via:</span>
+                    <span><img id="reach" src="icons/Gmail_icon_(2020).svg.png" alt=""> : ochachamoses443@gmail.com ;</span>
+                    <span><img id="reach" src="./icons/124034.png" alt=""> 0712955568 ;</span>
+                    <span><img id="reach" src="./icons/124010.png" alt=""> : Moses Ochacha</span>
+                    <span> <img id="reach" src="./icons/images.jpeg" alt=""> 0784596400</span>
+                    <span>Located at Kibra Jamhuri Phase 1 ;</span>
+                </div>
+                <div id="featureInfo" class="features card mt-2 col-4" hidden>
+                    <h2>Authentication </h2>
+                    <span>This feature is more secured and no one can be able access your personal details.</span>
+                    <span>Please ensure to follow the right steps to opt in.</span>
+                    <h3>Doc</h3>
+                    <span>This means Documentation.</span>
+                    <span>At this point you will be able to get more expanation about the website.</span>
+                    <h3>searching</h3>
+                    <span>This feature will enable you to search news categories (sports ,science,hatke ...) of your choice.</span>
 
 
-                          <div  id="getstarted" class="card" style="background-color: bisque;" hidden >
-                            <h1 style="text-align: center;">Documentation </h1>
-                            <!-- <div class="card" id="documentation">
+                </div>
+
+
+                <div id="getstarted" class="card" hidden>
+                    <h1 style="text-align: center;">Documentation </h1>
+                    <!-- <div class="card" id="documentation">
                                 <h3 class="cards">About us</h3>
                                
-                            </div> --><div class="card" id="using" >
-                                <h3 class="cards">How To use</h3>
-                              <span>To get started click on the signin button</span><br>
-                              <span>click on every update on left side under Top headline news to get its content</span>
-                              <span>You can also search your favaourite news categories</span>
-                              <span>You can read the updates and get more storiies by clicking READmORE Link.</span>
-                            </div>
-                            <div class="card" id="application" >
-                                <h3 class="cards">About Application</h3>
-                                <h4>Welcome To inshort News</h4>
-                                <Span>This application enables users to get news update from the following categoris ;
-                                    <option  id="value">all</option>
-                                    <option  id="value">business</option>
-                                    <option  id="value">sports</option>
-                                    <option  id="value">world</option>
-                                    <option  id="value">politics</option>
-                                    <option  id="value">startup</option>
-                                    <option  id="value">entertainment</option>
-                                    <option  id="value">miscellaneous</option>
-                                    <option  id="value">hatke</option>
-                                    <option  id="value">science</option>
-                                    <option  id="value">automobile</option></Span> <br>
-                                <span>Due to currently overdependent on the social media people do not get real-time information until the set time. Secondly, This Social medias only bases on news within the country. Due to this research I have noticed to launch an app that will allow people to get news updates as they occurs world wide.</span> <br>
-                                <span> Due to the above problems I decided to create an application that will allow users to get news updates immediately they occurs.</span>
-                            </div>
-                            
-                            
-
-                          </div>
-                        </div>
-                       
-                        </div>
-                    
-
-                     </div>
-
-
-                 <!-- body information -->
-                     <div class="container-fluid" id="body" hidden  >
-                        <div class="row mt-3" id="TopNews">
-                                    <div class="col-4 " >
-                                        <h3 class="bg-info text-md-center"> Top news headline</h3>
-                                        <ol id="Top_News" class="TopNews">
-                                        </ol>
-                                    </div>
-
-                                    <div class="col-4 mb-1" id="poster" >                                  
-                                    </div>
-                              
-                                    <div class="col-4 text-md-start text-center" id="Content">  
-                                        
-                                        </div>                 
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                
+                            </div> -->
+                    <div class="card" id="using">
+                        <h3 class="cards">How To use</h3>
+                        <span>To get started click on the signin button</span><br>
+                        <span>click on every update on left side under Top headline news to get its content</span>
+                        <span>You can also search your favaourite news categories</span>
+                        <span>You can read the updates and get more storiies by clicking READmORE Link.</span>
                     </div>
-                     
-    
-    
+                    <div class="card" id="application">
+                        <h3 class="cards">About Application</h3>
+                        <h4>Welcome To inshort News</h4>
+                        <Span>This application enables users to get news update from the following categoris ;
+                            <option id="value">all</option>
+                            <option id="value">business</option>
+                            <option id="value">sports</option>
+                            <option id="value">world</option>
+                            <option id="value">politics</option>
+                            <option id="value">startup</option>
+                            <option id="value">entertainment</option>
+                            <option id="value">miscellaneous</option>
+                            <option id="value">hatke</option>
+                            <option id="value">science</option>
+                            <option id="value">automobile</option>
+                        </Span> <br>
+                        <span>Due to currently overdependent on the social media people do not get real-time information until the set time. Secondly, This Social medias only bases on news within the country. Due to this research I have noticed to launch an app that will allow people to get news updates as they occurs world wide.</span> <br>
+                        <span> Due to the above problems I decided to create an application that will allow users to get news updates immediately they occurs.</span>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- body information -->
+    <div class="container-fluid" id="body" hidden>
+        <div class="row mt-3" id="TopNews1">
+            <div class="col-4 ">
+                <h3 class="bg-info text-md-center"> Top news headline</h3>
+                <ol id="Top_News" class="TopNews">
+                </ol>
+            </div>
+
+            <div class="col-4 mb-1" id="poster">
+            </div>
+
+            <div class="col-4 text-md-start text-center" id="Content">
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+
+    </div>
+
+
+
     <script src="index.js"> </script>
-     <!-- <script src="bootstrap.js"></script> -->
+    <!-- <script src="bootstrap.js"></script> -->
 </body>
+
 </html>
